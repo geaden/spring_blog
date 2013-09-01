@@ -10,7 +10,7 @@ from .base import *
 # S3_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
 # MEDIA_URL = S3_URL
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 # Allow all host headers
