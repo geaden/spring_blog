@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.conf.urls import patterns, include, url
 
 # Uncomment the next two lines to enable the admin:
@@ -17,7 +18,7 @@ urlpatterns = patterns('',
     url(r'^comments/', include('django.contrib.comments.urls')),
 
     # 3rd party urls
-     url(r'^tinymce/', include('tinymce.urls')),
+    url(r'^tinymce/', include('tinymce.urls')),
 
     # Your project url
     url(r'^', include('apps.blog.urls',
@@ -26,5 +27,9 @@ urlpatterns = patterns('',
 
     url(r'^', include('apps.tags.urls',
                       namespace='tag',
-                      app_name='tag'))
+                      app_name='tag')),
+
+    # serve static file on heroku
+    url(r'^static/(?P.*)$',
+        'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
 )
