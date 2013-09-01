@@ -1,1 +1,3 @@
-web: gunicorn hotdot.hotdot.wsgi
+web: gunicorn hotdot.wsgi:application --chdir hotdot
+
+
