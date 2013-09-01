@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load comments %}
+{% block title %}{{ object }}{% endblock %}
+{% block content %}
+{% include 'blog/post_content.html' %}
+{% get_comment_count for post as comment_count %}
+<h3>{% trans 'Comments' %}</h3>
+<div class="alert alert-success alert-dismissable" style="display: none;">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+</div>
+<div id="comments">
+    {% if comment_count %}
+    {% get_comment_list for post as comment_list %}
+    {% for comment in comment_list reversed %}
+        <div class="panel panel-info">
+            <div class="panel-heading"><strong>{{ comment.name }}</strong> said:</div>
+            <div class="panel-body">
+                {{ comment.comment|escape|urlizetrunc:40|linebreaks }}
+            </div>
+        </div>
+    {% endfor %}
+    {% else %}
+        <div class="panel" style="display: none;"></div>
+        <p id="nocomments">No comments</p>
+    {% endif %}
+</div>
+<br />
+<div id="commentbox">
+{% render_comment_form for post %}
+</div>
+{% endblock %}

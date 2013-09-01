@@ -1,0 +1,24 @@
+/* Custom css */
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    padding-top: 50px;
+}
+
+.navbar-inverse {
+    background-color: #0D2E1F;
+}
+
+#brand {
+    font-family: 'Lobster', cursive;
+}
+
+.scrollup{
+    width:40px;
+    height:40px;
+    opacity:0.3;
+    position:fixed;
+    bottom:100px;
+    right:100px;
+    display:none;
+    font-size: 72px;
+}

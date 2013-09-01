@@ -1,0 +1,31 @@
+div.tagsinput {
+    padding:1px;
+    height:20px;
+    overflow-y: hidden;
+}
+
+div.tagsinput span.tag {
+    border: 1px solid #0A63A3;
+    background: #74CBE8;
+    color: #0A63A3;
+    font-size:11px;
+    padding: 2px;
+}
+
+div.tagsinput span.tag {
+    padding: 2px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+div.tagsinput span.tag a {
+    font-weight: bold;
+    color: #0A63A3;
+    text-decoration:none;
+    font-size: 11px;
+}
+
+div.tagsinput input {
+    font-size: 11px;
+    padding: 2px;
+}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Tag / {{ object.name }}{% endblock %}
+{% block content %}
+{% for post in posts_list %}
+{% include 'blog/post_content.html' %}
+{% endfor%}
+{% if posts_list.has_other_pages %}
+    {% url 'tags:detail' object.pk as paged_url %}
+    {% include 'snippets/paginator.html' %}
+{% endif %}
+{% endblock %}

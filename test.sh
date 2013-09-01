@@ -1,2 +1,2 @@
 # Runs tests
-coverage run mydjango/manage.py test --settings=mydjango.settings.test
+coverage run hotdot/manage.py test $1 --settings=hotdot.settings.test

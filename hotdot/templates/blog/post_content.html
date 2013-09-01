@@ -1,0 +1,17 @@
+{% load comments %}
+{% load i18n %}
+{% load blog_extras %}
+<h1>{{ post.title }}</h1>
+<em><sapan class="glyphicon glyphicon-calendar"></sapan>&nbsp;{{ post.pub_date|date:"l, F d, Y" }}</em>
+<hr />
+{% if posts_list %}
+    <p>{{ post.content|safe|pagebreak }}</p>
+    <p>
+        <a class='btn btn-success' href="{% url 'blog:detail' post.pk %}#more">more...</a>
+    </p>
+{% else %}
+    <p>{{ post.content|safe }}</p>
+{% endif %}
+    <p><span class="glyphicon glyphicon-tags" style="padding-right: 10px;"></span>{{ post.tags.all|safeseq|taglink|join:", " }}</p>
+{% get_comment_count for post as comment_count %}
+<p><span class="glyphicon glyphicon-comment" style="padding-right: 10px;"></span>{{ comment_count }}</p>

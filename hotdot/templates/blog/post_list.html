@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans 'Home'%}{% endblock %}
+{% block content %}
+{% if posts_list %}
+    {% for post in posts_list %}
+       {% include 'blog/post_content.html' %}
+    {% endfor %}
+    {% if is_paginated %}
+       {% url 'blog:list' as paged_url %}
+       {% include 'snippets/paginator.html' %}
+    {% endif %}
+{% else %}
+    <h1>No posts</h1>
+{% endif %}
+{% endblock %}

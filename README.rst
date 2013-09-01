@@ -1,12 +1,8 @@
-Base Django project
-===================
+Spring blog source code
+=======================
 
-Base django project
+Blog with auto generated content from `http://vesna.yandex.ru`.
 
-Inspired by [@pydanny|http://www.twitter.com/pydanny]
-book "Two scoops of Django"
-
-Feel free to modify that layout to your own needs
-
+Created as part of a task for contenders on web-developer position for `http://www.hotdot.ru`
 
 Gennady Denisov, 2013
