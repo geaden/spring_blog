@@ -30,6 +30,6 @@ urlpatterns = patterns('',
                       app_name='tag')),
 
     # serve static file on heroku
-    url(r'^static/(?P.*)$',
+    url(r'^static/(.*)$',
         'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
 )
