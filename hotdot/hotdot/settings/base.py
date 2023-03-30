@@ -171,7 +171,6 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
 
     # 3rd pary apps go here
-    'south',
     'tinymce',
 
     # you project apps
