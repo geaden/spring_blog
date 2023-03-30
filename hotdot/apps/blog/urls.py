@@ -1,7 +1,7 @@
 # Create your views here.
 
 
-from django.conf.urls import path
+from django.urls import path
 
 from .views import \
     PostDetailView, PostListView
