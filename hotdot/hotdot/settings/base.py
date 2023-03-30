@@ -3,7 +3,7 @@
 import os
 from os.path import join, abspath, dirname
 
-from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse_lazy
 
 from django.conf import settings
 
