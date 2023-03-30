@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from functools import partial
-from django.contrib.admin.util import flatten_fieldsets
+from django.contrib.admin.utils import flatten_fieldsets
 from django.contrib.contenttypes.models import ContentType
 
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.contrib import admin
 from django.forms.models import modelform_factory
 
