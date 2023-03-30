@@ -33,9 +33,13 @@ def taglink(value):
     """
     result = []
     for tag_name in value:
-        tag = Tag.objects.get(name=tag_name)
-        url = reverse('tag:detail', args=[tag.pk,])
-        link = mark_safe('<a href="{url}">{name}</a>'.format(
-            url=url, name=tag.name))
-        result.append(link)
+        try:
+            tag = Tag.objects.get(name=tag_name)
+        except Tag.DoesNotExist:
+            tag = None
+        if tag:
+            url = reverse('tag:detail', args=[tag.pk,])
+            link = mark_safe('<a href="{url}">{name}</a>'.format(
+                url=url, name=tag.name))
+            result.append(link)
     return result
