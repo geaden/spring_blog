@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.urls import path, include
+import django.views.static
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -27,5 +28,5 @@ urlpatterns = [
 
     # serve static file on heroku
     path(r'^static/(.*)$',
-        'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+        django.views.static.serve, {'document_root': settings.STATIC_ROOT}),
 ]
