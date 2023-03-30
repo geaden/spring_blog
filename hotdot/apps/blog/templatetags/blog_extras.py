@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import logging
 from django import template
 from django.conf import settings
 from django.urls import reverse
@@ -36,6 +37,7 @@ def taglink(value):
         try:
             tag = Tag.objects.get(name=tag_name)
         except Tag.DoesNotExist:
+            logging.warning('Tag with name %s not found', tag_name)
             tag = None
         if tag:
             url = reverse('tag:detail', args=[tag.pk,])
