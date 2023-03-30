@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from functools import partial
-from django.contrib.admin.util import flatten_fieldsets
+from django.contrib.admin.utils import flatten_fieldsets
 from django.contrib.contenttypes.models import ContentType
 
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.contrib import admin
 from django.forms.models import modelform_factory
 
@@ -39,7 +39,8 @@ class PostAdmin(admin.ModelAdmin):
         if db_field.name in ('content'):
             return db_field.formfield(widget=TinyMCE(
                 attrs={'cols': 50, 'rows': 30},
-                mce_attrs={'external_link_list_url': reverse('tinymce.views.flatpages_link_list')},
+                mce_attrs={'external_link_list_url': reverse(
+                    'tinymce.views.flatpages_link_list')},
             ))
         return super(PostAdmin, self).formfield_for_dbfield(db_field, **kwargs)
 
@@ -56,7 +57,6 @@ class PostAdmin(admin.ModelAdmin):
             post.save()
         form.save_m2m()
         return super(PostAdmin, self).save_form(request, form, change)
-
 
 
 admin.site.register(Post, PostAdmin)

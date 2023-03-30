@@ -3,7 +3,7 @@ from django.utils import timezone
 from django.db import models
 from django.utils.translation \
     import ugettext_lazy as _
-from django.core.urlresolvers import \
+from django.urls import \
     reverse
 
 # Create your models here.

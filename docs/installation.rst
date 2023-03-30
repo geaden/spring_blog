@@ -19,5 +19,8 @@ Initialize variables
    activate script in <your virtual environment>/bin
    or just run source .init
 
+# Modern
 
+Build image `docker build -t spring_blog:latest .`
+Run `docker run -it --rm -v "$PWD:/usr/src/app" spring_blog:latest /bin/sh`
 

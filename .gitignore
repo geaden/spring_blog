@@ -3,6 +3,7 @@
 
 # Python stuff
 *.pyc
+__pycache__
 
 # Sublime stuff
 *.py~
