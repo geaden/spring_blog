@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.urls import path, include
+from django.urls import re_path, include
 import django.views.static
 
 # Uncomment the next two lines to enable the admin:
@@ -15,18 +15,18 @@ urlpatterns = [
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    path(r'^admin/', admin.site.urls),
-    path(r'^comments/', include('django_comments.urls')),
+    re_path(r'^admin/', admin.site.urls),
+    re_path(r'^comments/', include('django_comments.urls')),
 
     # 3rd party urls
-    path(r'^tinymce/', include('tinymce.urls')),
+    re_path(r'^tinymce/', include('tinymce.urls')),
 
     # Your project url
-    path(r'^', include('apps.blog.urls')),
+    re_path(r'^', include('apps.blog.urls')),
 
-    path(r'^', include('apps.tags.urls')),
+    re_path(r'^', include('apps.tags.urls')),
 
     # serve static file on heroku
-    path(r'^static/(.*)$',
-        django.views.static.serve, {'document_root': settings.STATIC_ROOT}),
+    re_path(r'^static/(.*)$',
+            django.views.static.serve, {'document_root': settings.STATIC_ROOT}),
 ]

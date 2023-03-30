@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django import template
 from django.conf import settings
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.template.defaultfilters import stringfilter
 from django.utils.safestring import mark_safe
 
@@ -39,5 +39,3 @@ def taglink(value):
             url=url, name=tag.name))
         result.append(link)
     return result
-
-
