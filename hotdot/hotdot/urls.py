@@ -21,13 +21,9 @@ urlpatterns = [
     url(r'^tinymce/', include('tinymce.urls')),
 
     # Your project url
-    url(r'^', include('apps.blog.urls',
-                      namespace='blog',
-                      app_name='blog')),
+    url(r'^', include('apps.blog.urls')),
 
-    url(r'^', include('apps.tags.urls',
-                      namespace='tag',
-                      app_name='tag')),
+    url(r'^', include('apps.tags.urls')),
 
     # serve static file on heroku
     url(r'^static/(.*)$',
