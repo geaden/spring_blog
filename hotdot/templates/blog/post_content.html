@@ -7,7 +7,7 @@
 {% if posts_list %}
     <p>{{ post.content|safe|pagebreak }}</p>
     <p>
-        <a class='btn btn-success' href="{% url 'blog:detail' post.pk %}#more">more...</a>
+        <a class='btn btn-success' href="{% url 'detail' post.pk %}#more">more...</a>
     </p>
 {% else %}
     <p>{{ post.content|safe }}</p>
