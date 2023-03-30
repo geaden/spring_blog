@@ -1,11 +1,11 @@
 from django.conf import settings
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = [
     # Examples:
     # url(r'^$', 'mydjango_project.views.home', name='home'),
     # url(r'^mydjango_project/', include('mydjango_project.foo.urls')),
@@ -32,4 +32,4 @@ urlpatterns = patterns('',
     # serve static file on heroku
     url(r'^static/(.*)$',
         'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
-)
+]

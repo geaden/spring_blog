@@ -1,13 +1,13 @@
 # Create your views here.
 
 
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 
 from .views import \
     PostDetailView, PostListView
 
 
-urlpatterns = patterns(
+urlpatterns = [
     '',
     url(r'(?P<pk>\d+)/$',
         PostDetailView.as_view(),
@@ -15,4 +15,4 @@ urlpatterns = patterns(
     url(r'^$',
         PostListView.as_view(),
         name='list'),
-)
+]
