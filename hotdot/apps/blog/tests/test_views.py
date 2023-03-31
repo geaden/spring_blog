@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.utils import timezone
 
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 
 from ..models import Post
 
@@ -13,10 +13,10 @@ class BlogViewsTestCase(TestCase):
                 title=u'foo', content=u'bar',
                 pub_date=timezone.now())
         self.detail_url = reverse(
-            'blog:detail',
+            'detail',
             args=[self.post.pk])
         self.list_url = reverse(
-            'blog:list')
+            'list')
 
     def test_post_detail(self):
         response = self.client.\
