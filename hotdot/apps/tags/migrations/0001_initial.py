@@ -8,7 +8,6 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('blog', '0002_alter_post_pub_date'),
     ]
 
     operations = [

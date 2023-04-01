@@ -43,7 +43,8 @@ class SpringBlogLiveTestCase(LiveServerTestCase):
         email_field.send_keys('foo@bar.bz')
         comment_field.send_keys('foo bar bz')
 
-        self.browser.find_element_by_xpath('//input[@value=\'leave a comment\']').click()
+        self.browser.find_element_by_xpath(
+            '//input[@value=\'leave a comment\']').click()
 
         body = self.browser.find_element_by_tag_name('body')
 

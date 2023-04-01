@@ -46,7 +46,7 @@ class BlogViewsTestCase(TestCase):
         self.assertEquals(
             len(response.context['posts_list']),
             10, msg='Posts per page should be 10')
-        self.assertIn(self.post.pub_date.strftime('%A, %B %d, %Y'), response.content)
+        self.assertIn(self.post.pub_date.strftime('%A, %B %d, %Y'), response.content.decode('utf-8'))
 
     def test_post_list_pagination(self):
         # Create 10 more posts
@@ -57,4 +57,4 @@ class BlogViewsTestCase(TestCase):
 
         response = self.client.get(self.list_url)
 
-        self.assertIn('pager', response.content)
+        self.assertIn(b'pager', response.content)
